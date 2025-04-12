@@ -30,7 +30,7 @@ cd Camhack
 chmod +X start.sh
 ```
 
-### Start Comment
+### Start tool command
 ```
 bash start.sh
 ```
