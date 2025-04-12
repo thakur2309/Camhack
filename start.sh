@@ -11,7 +11,7 @@ reset='\e[0m'
 
 # Auto-install required packages
 echo -e "${yellow}[+] Checking & Installing required packages...${reset}"
-pkgs=(php openssh wget figlet inotifywait)
+pkgs=(php openssh wget figlet inotify-tools)
 for pkg in "${pkgs[@]}"; do
     if ! command -v $pkg >/dev/null 2>&1; then
         echo -e "${cyan}Installing $pkg...${reset}"
