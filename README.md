@@ -1,12 +1,12 @@
 <h1 align="center"><u>Android Camhack</u></h1>
 
-![Instagram Image ](https://raw.githubusercontent.com/thakur2309/Camhack/refs/heads/main/Screenshot_2025_0412_084302.jpg)
+![Instagram Image ](https://raw.githubusercontent.com/thakur2309/Camhack/refs/heads/main/Screenshot_2025_0412_105039.jpg)
 
 <h3 align="center"> Preview!</h3>
 
 ### Termux Full Install and Setup 
 ```
-pkg update && pkg upgrade && pip install lolcat && pkg install git && git clone https://github.com/thakur2309/Camhack.git && cd Camhack && chmod +X start.sh && bash start.sh
+pkg update && pkg upgrade && pkg install git && git clone https://github.com/thakur2309/Camhack.git && cd Camhack && chmod +X start.sh && bash start.sh
 ```
 
 ### [TERMUX] Packege Install Comments
@@ -15,7 +15,7 @@ pkg update && pkg upgrade && pip install lolcat && pkg install git && git clone 
 pkg update && pkg upgrade -y
 ```
 ```
-pip install lolcat
+pip install php
 ```
 ```
 pkg install git
