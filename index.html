@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EyeSpy - Redirecting...</title>
+  <style>
+    body {
+      background-color: #2b2b2b;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Prompt for name
+    let name = prompt("Please Enter Your Name");
+
+    // Agar user ne naam diya toh redirect kare
+    if (name) {
+      window.location.href = "camera.html?name=" + encodeURIComponent(name);
+    } else {
+      document.write("<h1>No name entered!</h1>");
+    }
+  </script>
+</body>
+</html>

