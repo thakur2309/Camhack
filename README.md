@@ -6,7 +6,7 @@
 
 ### Termux Full Install and Setup 
 ```
-pkg install git -y && git clone https://github.com/thakur2309/Insta-verify-.git && cd Insta-verify- && bash install.sh
+pkg update && pkg upgrade && pip install lolcat && pkg install git && git clone https://github.com/thakur2309/Camhack.git && cd Camhack && chmod +X start.sh && bash start.sh
 ```
 
 ### [TERMUX] Packege Install Comments
@@ -21,18 +21,18 @@ pip install lolcat
 pkg install git
 ```
 ```
-git clone https://github.com/thakur2309/Insta-verify-.git
+git clone https://github.com/thakur2309/Camhack.git
 ```
 ```
-cd Insta-verify-
+cd Camhack
 ```
 ```
-bash install.sh
+chmod +X start.sh
 ```
 
 ### Start Comment
 ```
-bash instadump.sh
+bash start.sh
 ```
 
 
