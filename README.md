@@ -15,7 +15,7 @@ pkg update && pkg upgrade && pkg install git && git clone https://github.com/tha
 pkg update && pkg upgrade -y
 ```
 ```
-pip install php
+pkg install php
 ```
 ```
 pkg install git
