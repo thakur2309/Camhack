@@ -27,7 +27,7 @@ git clone https://github.com/thakur2309/Camhack.git
 cd Camhack
 ```
 ```
-chmod +X start.sh
+chmod +x start.sh
 ```
 
 ### Start tool command
